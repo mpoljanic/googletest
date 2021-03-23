@@ -37,17 +37,17 @@
 #include <cstddef>
 #include <cstdio>
 
-int isatty(int a)
+extern "C" int isatty(int a)
 {
   return 0;
 }
 
-int rmdir(const char *path)
+extern "C" int rmdir(const char *path)
 {
   return 0;
 }
 
-int chdir(const char *path)
+extern "C" int chdir(const char *path)
 {
   return 0;
 }
