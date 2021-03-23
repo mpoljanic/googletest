@@ -34,36 +34,4 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 
-#include <cstddef>
-#include <cstdio>
-
-extern "C" int isatty(int a)
-{
-  return 0;
-}
-
-extern "C" int rmdir(const char *path)
-{
-  return 0;
-}
-
-extern "C" int chdir(const char *path)
-{
-  return 0;
-}
-
-char *strdup(const char *s) {
-    return nullptr;
-}
-
-int fileno(FILE *stream)
-{
-  return 0;
-}
-
-FILE *fdopen(int fd, const char *mode)
-{
-  return nullptr;
-}
-
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
