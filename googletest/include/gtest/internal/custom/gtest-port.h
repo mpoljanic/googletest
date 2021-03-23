@@ -70,19 +70,6 @@ FILE *fdopen(int fd, const char *mode)
   return nullptr;
 }
 
-// This stub function is required by _mainCRTSturtup
-extern "C" void exit(int status)
-{
-    static_cast<void>(status);
-    while (true) {}
-}
-
-// This stub function is required by stdlib
-extern "C" void _exit()
-{
-    exit(-1);
-}
-
 // This heap allocation stub is required by stdlib
 extern "C" unsigned _sbrk(int inc)
 {
@@ -142,13 +129,6 @@ extern "C" int _fstat(int file, struct stat *st)
     static_cast<void>(file);
     static_cast<void>(st);
     return -1;
-}
-
-// This stub function is required by stdlib
-extern "C" int _isatty(int file)
-{
-    static_cast<void>(file);
-    return 1;
 }
 
 // This stub function is required by stdlib
