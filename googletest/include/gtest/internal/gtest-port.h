@@ -1998,13 +1998,13 @@ inline bool IsDir(const StatStruct& st) {
 typedef struct stat StatStruct;
 
 inline int FileNo(FILE* file) { return 0; }
-inline int IsATTY(int fd) { return isatty(fd); }
+inline int IsATTY(int fd) { return 0; }
 inline int Stat(const char* path, StatStruct* buf) { return stat(path, buf); }
 inline int StrCaseCmp(const char* s1, const char* s2) {
   return strcasecmp(s1, s2);
 }
 inline char* StrDup(const char* src) { return nullptr; }
-inline int RmDir(const char* dir) { return rmdir(dir); }
+inline int RmDir(const char* dir) { return 0; }
 inline bool IsDir(const StatStruct& st) { return S_ISDIR(st.st_mode); }
 
 #endif  // GTEST_OS_WINDOWS
@@ -2022,7 +2022,7 @@ inline const char* StrNCpy(char* dest, const char* src, size_t n) {
 // defined there.
 
 #if !GTEST_OS_WINDOWS_MOBILE && !GTEST_OS_WINDOWS_PHONE && !GTEST_OS_WINDOWS_RT
-inline int ChDir(const char* dir) { return chdir(dir); }
+inline int ChDir(const char* dir) { return 0; }
 #endif
 inline FILE* FOpen(const char* path, const char* mode) {
   return fopen(path, mode);
