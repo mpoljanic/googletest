@@ -55,16 +55,6 @@ int isatty(int a)
   return 0;
 }
 
-int rmdir(const char *path)
-{
-  return 0;
-}
-
-int chdir(const char *path)
-{
-  return 0;
-}
-
 FILE *fdopen(int fd, const char *mode)
 {
   return nullptr;
