@@ -34,9 +34,4 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 
-int _open(const char *name, int flags, int mode)
-{
-    return -1;
-}
-
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
