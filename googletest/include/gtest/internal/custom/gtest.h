@@ -34,4 +34,13 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
 
+int _open(const char *name, int flags, int mode)
+{
+    return -1;
+}
+
+char *getcwd(char *buf, size_t size)
+{
+  return nullptr;
+}
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
