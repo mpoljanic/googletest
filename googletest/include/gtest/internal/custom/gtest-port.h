@@ -50,11 +50,6 @@ int fileno(FILE *stream)
   return 0;
 }
 
-int isatty(int a)
-{
-  return 0;
-}
-
 FILE *fdopen(int fd, const char *mode)
 {
   return nullptr;
