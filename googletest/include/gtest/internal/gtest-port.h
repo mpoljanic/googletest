@@ -1986,7 +1986,7 @@ inline int FileNo(FILE* file) { return reinterpret_cast<int>(_fileno(file)); }
 // time and thus not defined there.
 # else
 inline int FileNo(FILE* file) { return _fileno(file); }
-inline int Stat(const char* path, StatStruct* buf) { return _stat(path, buf); }
+inline int Stat(const char* path, StatStruct* buf) { return 0; }
 inline int RmDir(const char* dir) { return _rmdir(dir); }
 inline bool IsDir(const StatStruct& st) {
   return (_S_IFDIR & st.st_mode) != 0;
