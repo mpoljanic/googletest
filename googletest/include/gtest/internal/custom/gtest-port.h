@@ -34,4 +34,9 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 
+int _open(char* path, int flags, ...) {
+  /* Pretend like we always fail */
+  return -1;
+}
+
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
