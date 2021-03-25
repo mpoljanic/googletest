@@ -323,6 +323,8 @@ bool FilePath::CreateFolder() const {
   delete [] unicode;
 #elif GTEST_OS_WINDOWS
   int result = _mkdir(pathname_.c_str());
+#elif GTEST_OS_NONE
+  int result = 0;
 #else
   int result = mkdir(pathname_.c_str(), 0777);
 #endif  // GTEST_OS_WINDOWS_MOBILE
