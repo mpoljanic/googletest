@@ -1980,7 +1980,7 @@ inline int StrCaseCmp(const char* s1, const char* s2) {
 inline char* StrDup(const char* src) { return _strdup(src); }
 # endif  // __BORLANDC__
 
-# if GTEST_OS_WINDOWS_MOBILE
+# if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_NONE
 inline int FileNo(FILE* file) { return reinterpret_cast<int>(_fileno(file)); }
 // Stat(), RmDir(), and IsDir() are not needed on Windows CE at this
 // time and thus not defined there.
