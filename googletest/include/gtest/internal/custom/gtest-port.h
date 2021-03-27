@@ -34,4 +34,20 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
 
+#ifdef GTEST_OS_NONE
+
+extern "C" {
+int _unlink(const char* name) { return 0; }
+}
+
+extern "C" {
+int _open(const char* name, int mode) { return -1; }
+}
+
+extern "C" {
+int _stat(char* file, struct stat* st) { return 0; }
+}
+
+#endif
+
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
